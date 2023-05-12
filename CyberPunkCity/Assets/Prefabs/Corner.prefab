@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 268773400157594087, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_Name
-      value: Corner Variant
+      value: Corner
       objectReference: {fileID: 0}
     - target: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_RootOrder
@@ -22,7 +22,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.07
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -30,7 +30,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65,7 +65,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3882531839438574580, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 8833766861325395731}
+      addedObject: {fileID: 3098587784494867083}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
 --- !u!4 &4034098443258994527 stripped
@@ -142,7 +142,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a57e47a13b7a6d45a57a7eda594734d, type: 3}
---- !u!4 &8833766861325395731 stripped
+--- !u!4 &3098587784494867083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8686776423675014072, guid: 1a57e47a13b7a6d45a57a7eda594734d, type: 3}
   m_PrefabInstance: {fileID: 6020683842485831987}

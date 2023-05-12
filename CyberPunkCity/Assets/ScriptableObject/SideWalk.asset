@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 957415b78b71eab40a09fcbd010b2dff, type: 3}
-  m_Name: Curb_2
+  m_Name: SideWalk
   m_EditorClassIdentifier: 
-  meshRotation: 2
-  prefab: {fileID: 117277148439276876, guid: 5497f111902147c43a07fdb8008cb820, type: 3}
-  cellType: 0
-  posX: 
-  negX: 
-  posZ: 
-  negZ: 
+  meshRotation: 0
+  prefab: {fileID: 4584494161651075192, guid: 89ef50e9e1f79ef42bf9645054c08932, type: 3}
+  positiveX: 3
+  positiveZ: 2
+  negativeX: 2
+  negativeZ: 2

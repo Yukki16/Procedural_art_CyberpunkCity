@@ -13,13 +13,8 @@ MonoBehaviour:
   m_Name: Road
   m_EditorClassIdentifier: 
   meshRotation: 0
-  prefab: {fileID: 268773400157594087, guid: f2b4442b050fc604184dd51d8138fef4, type: 3}
-  posX: 0
-  negX: 0
-  posZ: 0
-  negZ: 0
-  validNeighbours:
-    posX: []
-    posZ: []
-    negX: []
-    negZ: []
+  prefab: {fileID: 3893802158289117482, guid: 3355ea31249caf34ca826db85ee6439f, type: 3}
+  positiveX: 3
+  positiveZ: 3
+  negativeX: 3
+  negativeZ: 3
