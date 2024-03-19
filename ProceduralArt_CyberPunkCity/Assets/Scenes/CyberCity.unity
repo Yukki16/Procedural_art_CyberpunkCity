@@ -933,7 +933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a632e5363f3b14fa796784ec427d18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dimensions: 20
+  dimensions: 10
   tileObjects:
   - {fileID: 11400000, guid: 7278aae3326e8e64ea8820f0466d9c9d, type: 2}
   - {fileID: 11400000, guid: 4318a658db0a2844c8a54c179fd8e672, type: 2}
@@ -950,6 +950,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 053544469bc16ac4e8b02df3005a6638, type: 2}
   gridComponents: []
   cellObj: {fileID: 27215432440375448, guid: 2739e5ec53f10c4468de3d04a98825cf, type: 3}
+  backupTile: {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
 --- !u!4 &2019857728
 Transform:
   m_ObjectHideFlags: 0

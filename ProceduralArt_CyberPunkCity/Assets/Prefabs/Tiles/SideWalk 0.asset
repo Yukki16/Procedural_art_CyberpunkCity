@@ -16,13 +16,13 @@ MonoBehaviour:
     type: 3}
   upNeighbors:
   - {fileID: 11400000}
-  - {fileID: 11400000, guid: 7278aae3326e8e64ea8820f0466d9c9d, type: 2}
+  - {fileID: 11400000, guid: a9f81045726626b4b9ca3a1fb1c12b82, type: 2}
   leftNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: e955b76d4d1a5c54bb00b53d7e7a9e21, type: 2}
   downNeighbors:
   - {fileID: 11400000}
-  - {fileID: 11400000, guid: 4318a658db0a2844c8a54c179fd8e672, type: 2}
+  - {fileID: 11400000, guid: 7278aae3326e8e64ea8820f0466d9c9d, type: 2}
   rightNeighbors:
   - {fileID: 11400000, guid: dc490ddceb6ec1d4b9249a9eff3b4069, type: 2}
   - {fileID: 11400000, guid: a0542769caf61dc4cb37da28f3b8c446, type: 2}

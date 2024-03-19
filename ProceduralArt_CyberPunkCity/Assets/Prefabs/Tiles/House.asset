@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415dc2bc825803e4c9407a14a0aba3fc, type: 3}
   m_Name: House
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 8517247866348478834, guid: 33590fd15886fb948beb9f9e0452da45,
-    type: 3}
+  tilePrefab: {fileID: 129346, guid: c50789636e1fc5c4b8a37e2700e4a3c1, type: 3}
   upNeighbors:
   - {fileID: 11400000, guid: 053544469bc16ac4e8b02df3005a6638, type: 2}
   leftNeighbors:
