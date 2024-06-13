@@ -5,15 +5,17 @@ using UnityEngine;
 public class Cell : MonoBehaviour
 {
     public bool collapsed;
-    public Tile[] tileOptions;
+    public List<Tile> tileOptions;
+    public Vector2Int positionInGrid;
 
-    public void CreateCell(bool collapseState, Tile[] tiles)
+    public void CreateCell(bool collapseState, List<Tile> tiles, Vector2Int _positionInGrid)
     {
         collapsed = collapseState;
         tileOptions = tiles;
+        positionInGrid = _positionInGrid;
     }
 
-    public void RecreateCell(Tile[] tiles)
+    public void RecreateCell(List<Tile> tiles)
     {
         tileOptions = tiles;
     }
