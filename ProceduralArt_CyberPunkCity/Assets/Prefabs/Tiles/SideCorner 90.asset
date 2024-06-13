@@ -14,11 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 2379785250147536327, guid: b9652aff6bce44e4b8dc3b0f9ad7434f,
     type: 3}
-  weight: 1
+  weight: 0.5
   upNeighbors:
   - {fileID: 11400000, guid: e955b76d4d1a5c54bb00b53d7e7a9e21, type: 2}
   - {fileID: 11400000, guid: 4318a658db0a2844c8a54c179fd8e672, type: 2}
-  - {fileID: 11400000, guid: bed9a6fc828126d4e9ab39f4efdb2138, type: 2}
   downNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: bed9a6fc828126d4e9ab39f4efdb2138, type: 2}
@@ -32,7 +31,6 @@ MonoBehaviour:
   rightNeighbors:
   - {fileID: 11400000, guid: 901b4b38da572db49bed74d9892370e6, type: 2}
   - {fileID: 11400000, guid: 4318a658db0a2844c8a54c179fd8e672, type: 2}
-  - {fileID: 11400000, guid: 608ba019778462f4d8ff4ce0bf88dca9, type: 2}
   topLeftNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: 608ba019778462f4d8ff4ce0bf88dca9, type: 2}

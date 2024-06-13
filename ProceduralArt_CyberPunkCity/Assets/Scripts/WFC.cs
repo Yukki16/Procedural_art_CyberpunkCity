@@ -54,7 +54,11 @@ public class WFC : MonoBehaviour
         }
 
         // Fallback (should not happen)
-        Debug.LogWarning($"X: {collapsedCell.positionInGrid.x} Z:{collapsedCell.positionInGrid.y}");
+        //Still happens with aprox 1/50 times with the weights as they are now. Sadly I can t find some tiles that would match the specific exceptions
+        //in the SyntysStudious pack from which I took the tiles from.
+        Debug.LogWarning($"Cell fallback at: X: {collapsedCell.positionInGrid.x} Z:{collapsedCell.positionInGrid.y}"+
+            $"\nCheck the comment of this warning *insert big eyes hamster*");
+        //StopAllCoroutines();
         return backupTile;
     }
     void InitializeGrid()
@@ -133,7 +137,12 @@ public class WFC : MonoBehaviour
         {
             //Tile selectedTile = cellToCollapse.tileOptions[UnityEngine.Random.Range(0, cellToCollapse.tileOptions.Count)];
             Tile selectedTile = GetRandomTile(cellToCollapse);
+            
             cellToCollapse.tileOptions = new List<Tile>() { selectedTile };
+            if(selectedTile.Equals(backupTile))
+            {
+                return;
+            }
         }
         catch
         {
@@ -408,6 +417,8 @@ public class WFC : MonoBehaviour
         }
         else
         {
+            //TO COMMENT OUT AFTER TESTING
+            //Restets the grid everytime after fully generating the tiles. Used to test and iterate the algorithm for the tiles :D
             ResetGrid();
         }
 

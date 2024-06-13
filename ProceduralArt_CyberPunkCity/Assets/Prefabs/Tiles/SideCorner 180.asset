@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 413290428505400281, guid: 98673efc20434e04680072b505edc4a4,
     type: 3}
-  weight: 1
+  weight: 0.5
   upNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: 3e9b49eb3fd41464ebdf0fa3b5d1841b, type: 2}
@@ -23,7 +23,6 @@ MonoBehaviour:
   downNeighbors:
   - {fileID: 11400000, guid: e955b76d4d1a5c54bb00b53d7e7a9e21, type: 2}
   - {fileID: 11400000, guid: adc41436cad8e1c4d98e56aaa6810930, type: 2}
-  - {fileID: 11400000, guid: 3e9b49eb3fd41464ebdf0fa3b5d1841b, type: 2}
   leftNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: 608ba019778462f4d8ff4ce0bf88dca9, type: 2}
@@ -32,7 +31,6 @@ MonoBehaviour:
   rightNeighbors:
   - {fileID: 11400000, guid: 053544469bc16ac4e8b02df3005a6638, type: 2}
   - {fileID: 11400000, guid: adc41436cad8e1c4d98e56aaa6810930, type: 2}
-  - {fileID: 11400000, guid: e124640c653e83a458ae079320398a58, type: 2}
   topLeftNeighbors:
   - {fileID: 11400000, guid: ce3b79b78c6b7b249bfff5908d20cac8, type: 2}
   - {fileID: 11400000, guid: 608ba019778462f4d8ff4ce0bf88dca9, type: 2}
