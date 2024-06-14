@@ -7,9 +7,13 @@ using UnityEngine;
 
 public class WFC : MonoBehaviour
 {
+    public static WFC Instance;
+
+    public SkyScraperGenerator houseGenerator;
+
     public int dimensions;
     public List<Tile> tileObjects;
-    public List<Cell> gridComponents;
+    [SerializeField] List<Cell> gridComponents;
     public Cell cellObj;
 
     int iterations = 0;
@@ -20,14 +24,27 @@ public class WFC : MonoBehaviour
 
     void Awake()
     {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
         gridComponents = new List<Cell>();
         InitializeGrid();
     }
 
+    public List<Cell> GetGrid()
+    {
+        return gridComponents;
+    }
     public void ResetGrid()
     {
         StopAllCoroutines();
         Destroy(parentOfCells);
+        Destroy(SkyScraperGenerator.Instance.buildings);
         gridComponents = new List<Cell>();
         iterations = 0;
         InitializeGrid();
@@ -139,12 +156,12 @@ public class WFC : MonoBehaviour
             Tile selectedTile = GetRandomTile(cellToCollapse);
             
             cellToCollapse.tileOptions = new List<Tile>() { selectedTile };
-            if(selectedTile.Equals(backupTile))
+            /*if(selectedTile.Equals(backupTile))
             {
                 return;
-            }
+            }*/
         }
-        catch
+        catch //no longer needed will move
         {
             Tile selectedTile = backupTile;
             cellToCollapse.tileOptions = new List<Tile>() { selectedTile };
@@ -419,7 +436,9 @@ public class WFC : MonoBehaviour
         {
             //TO COMMENT OUT AFTER TESTING
             //Restets the grid everytime after fully generating the tiles. Used to test and iterate the algorithm for the tiles :D
-            ResetGrid();
+            //ResetGrid();
+
+            SkyScraperGenerator.Instance.GenerateBuildings();
         }
 
     }
