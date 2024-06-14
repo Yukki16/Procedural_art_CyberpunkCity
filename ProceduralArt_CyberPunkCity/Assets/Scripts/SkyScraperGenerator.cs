@@ -120,11 +120,12 @@ public class SkyScraperGenerator : MonoBehaviour
                 if (!foundAlready)
                 {
                     newHousePair.pairOfHouses = new List<Cell>();
-                    newHousePair.pairOfHouses.Add(grid[x * WFC.Instance.dimensions + y]);
+                    newHousePair.pairOfHouses.Add(grid[x * WFC.Instance.dimensions + y]); //Single house cell case
 
                     for (int z = x; z < WFC.Instance.dimensions; z++)  //Found a house and starts searching vertically
                     {
                         bool justQuit = false;
+                        int maxW = 0;
                         if (z >= x + 1) //This is to check if it should continue to the left, if there are any houses there
                                         // This is an early check to break faster from the loop
                         {
@@ -133,6 +134,7 @@ public class SkyScraperGenerator : MonoBehaviour
                                 break;
                             }
                         }
+
                         bool enteredAnotherBuildingOnZ = false;
                         foreach (var pair in allHouses) //Another check to not create pairs of houses already in the pairs.
                         {
@@ -142,11 +144,14 @@ public class SkyScraperGenerator : MonoBehaviour
                                 break;
                             }
                         }
+
                         if (enteredAnotherBuildingOnZ)
                         {
                             break;
                         }
-                        newHousePair.pairOfHouses.Add(grid[z * WFC.Instance.dimensions + y]);
+
+                        newHousePair.pairOfHouses.Add(grid[z * WFC.Instance.dimensions + y]); //Cells on the z but not on w case
+
                         for (int w = y + 1; w < WFC.Instance.dimensions; w++)
                         {
                             if (!grid[x * WFC.Instance.dimensions + w].tileOptions[0].Equals(houseTile)) //Check if on the original line there is still a house on the same row
@@ -158,6 +163,7 @@ public class SkyScraperGenerator : MonoBehaviour
                             if (!grid[z * WFC.Instance.dimensions + w].tileOptions[0].Equals(houseTile)) //Current cell not a house? end the search vertically
                             {
                                 justQuit = true; //bool to break out of z loop since there is ground in between
+                                maxW = w;
                                 break;
                             }
 
@@ -189,7 +195,8 @@ public class SkyScraperGenerator : MonoBehaviour
 
                         if(justQuit)
                         {
-                            newHousePair.pairOfHouses.Remove(grid[z * WFC.Instance.dimensions + y]);
+                            if(maxW == y + 1)
+                                newHousePair.pairOfHouses.Remove(grid[z * WFC.Instance.dimensions + y]);
                             break;
                         }
                     }

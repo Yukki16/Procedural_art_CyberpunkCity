@@ -45,6 +45,7 @@ public class WFC : MonoBehaviour
         StopAllCoroutines();
         Destroy(parentOfCells);
         Destroy(SkyScraperGenerator.Instance.buildings);
+        SkyScraperGenerator.Instance.allHouses = new List<SkyScraperGenerator.housePairs>();
         gridComponents = new List<Cell>();
         iterations = 0;
         InitializeGrid();

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilePrefab: {fileID: 5082585992078930967, guid: 6821766f13e682e4687d524449d19fdf,
     type: 3}
-  weight: 7
+  weight: 6
   upNeighbors:
   - {fileID: 11400000, guid: 053544469bc16ac4e8b02df3005a6638, type: 2}
   - {fileID: 11400000}

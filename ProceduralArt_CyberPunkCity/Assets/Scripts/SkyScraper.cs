@@ -20,10 +20,13 @@ public class SkyScraper : MonoBehaviour
     int randomBuildType = 0;
     [SerializeField] int buildingHeight;
 
+    
+    [SerializeField] Vector2Int buildingHeightRandomParams;
+
     private void Awake()
     {
         randomBuildType = UnityEngine.Random.Range(0, buildingTypes.Count);
-        buildingHeight = UnityEngine.Random.Range(10, 25);
+        buildingHeight = UnityEngine.Random.Range(buildingHeightRandomParams.x, buildingHeightRandomParams.y);
 
         GenerateBuilding();
     }

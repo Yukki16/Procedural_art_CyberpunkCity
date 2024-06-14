@@ -48,8 +48,15 @@ MonoBehaviour:
   - name: OctagonalBuilding
     buildingBase: {fileID: 5309420036591192011, guid: ef97321fdfc8d0b4590b585b5de1ae77,
       type: 3}
-    buildingPart: {fileID: 6019641776129112619, guid: 0f2eab21db8946e49ab68ddde28b4ed2,
+    buildingPart: {fileID: 3410268347478496663, guid: 2623fe21935eba74eb0c36ecdcafcc4d,
       type: 3}
-    roof: {fileID: 5309420036591192011, guid: ef97321fdfc8d0b4590b585b5de1ae77, type: 3}
-    distanceBetweenFloors: 2.5
+    roof: {fileID: 2668121334449067587, guid: 2c2ef5a981ed99e4390a2b0d4d44c60b, type: 3}
+    distanceBetweenFloors: 9
+  - name: RoundBuilding
+    buildingBase: {fileID: 7867041556563597144, guid: 8177aec544f22784cad4d75dad7c45ad,
+      type: 3}
+    buildingPart: {fileID: 67803341259342200, guid: c904590ee866c4c4a9417c0aa59bec9e,
+      type: 3}
+    roof: {fileID: 2340311186509453502, guid: f47461599f071a34e961cf767796b1b5, type: 3}
+    distanceBetweenFloors: 9
   buildingHeight: 0
