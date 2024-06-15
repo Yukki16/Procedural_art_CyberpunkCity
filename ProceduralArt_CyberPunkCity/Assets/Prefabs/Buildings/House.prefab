@@ -59,4 +59,12 @@ MonoBehaviour:
       type: 3}
     roof: {fileID: 2340311186509453502, guid: f47461599f071a34e961cf767796b1b5, type: 3}
     distanceBetweenFloors: 9
+  - name: SqrtBuilding
+    buildingBase: {fileID: 4867838069734296274, guid: d925f38d6a81c3040bdef327fcc423ff,
+      type: 3}
+    buildingPart: {fileID: 1629737956344234452, guid: a91eee58c8ab5be4bbef75563d1b20d4,
+      type: 3}
+    roof: {fileID: 4451889656029204296, guid: 3f0d817d0ab19ef46940896bf14ab067, type: 3}
+    distanceBetweenFloors: 9
   buildingHeight: 0
+  buildingHeightRandomParams: {x: 4, y: 10}
