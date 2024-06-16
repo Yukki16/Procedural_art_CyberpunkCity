@@ -25,31 +25,47 @@ public class SkyScraper : MonoBehaviour
 
     List<Sign> signsToSpawn = new List<Sign>();
 
+    List<GameObject> buildParts = new List<GameObject>();
+    Vector3 houseScale;
+
     public void StartBuilding(Vector3 scale)
     {
         randomBuildType = UnityEngine.Random.Range(0, buildingTypes.Count);
         buildingHeight = UnityEngine.Random.Range(buildingHeightRandomParams.x, buildingHeightRandomParams.y);
 
+        houseScale = scale;
         GenerateBuilding(scale);
     }
 
     private void GenerateBuilding(Vector3 scale)
     {
-        Instantiate(buildingTypes[randomBuildType].buildingBase, this.transform.position, this.transform.rotation, this.transform); //the base
+        buildParts.Add(Instantiate(buildingTypes[randomBuildType].buildingBase, this.transform.position, this.transform.rotation, this.transform)); //the base
 
         for (int i = 1; i <= buildingHeight; i++)
         {
-            Instantiate(buildingTypes[randomBuildType].buildingPart, this.transform.position + new Vector3(0, buildingTypes[randomBuildType].distanceBetweenFloors * i, 0),
-                this.transform.rotation, this.transform); //just a floor type in the assets from SyntysStudios pack
+            buildParts.Add(Instantiate(buildingTypes[randomBuildType].buildingPart, this.transform.position + new Vector3(0, buildingTypes[randomBuildType].distanceBetweenFloors * i, 0),
+                this.transform.rotation, this.transform)); //just a floor type in the assets from SyntysStudios pack
         }
 
-        Instantiate(buildingTypes[randomBuildType].roof, this.transform.position + new Vector3(0, buildingTypes[randomBuildType].distanceBetweenFloors * (buildingHeight + 1), 0),
-            this.transform.rotation, this.transform); //the roof
+        buildParts.Add(Instantiate(buildingTypes[randomBuildType].roof, this.transform.position + new Vector3(0, buildingTypes[randomBuildType].distanceBetweenFloors * (buildingHeight + 1), 0),
+            this.transform.rotation, this.transform)); //the roof
 
         signsToSpawn.AddRange(this.GetComponentsInChildren<Sign>());
         foreach (Sign sign in signsToSpawn)
         {
             sign.SpawnSign(scale);
         }
+    }
+
+    public void RedoBuilding()
+    {
+        for (int i = buildParts.Count - 1; i >= 0 ; i--)
+        {
+            Destroy(buildParts[i]);
+        }
+
+        buildParts.Clear();
+        signsToSpawn.Clear();
+        GenerateBuilding(houseScale);
     }
 }
