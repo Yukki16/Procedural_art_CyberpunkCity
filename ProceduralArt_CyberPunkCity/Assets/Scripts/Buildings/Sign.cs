@@ -16,14 +16,15 @@ public class Sign : MonoBehaviour
 
     int justARandomNumberToSeeIfIShouldGenerateASign = 1;
 
+    [SerializeField] GameObject signSpawned;
     public void SpawnSign(Vector3 scale)
     {
-        if(!justARandomNumberToSeeIfIShouldGenerateASign.Equals(UnityEngine.Random.Range(0, 5))) 
+        if (!justARandomNumberToSeeIfIShouldGenerateASign.Equals(UnityEngine.Random.Range(0, 5)))
         {
             return;
         }
         GameObject signToSpawn = ReturnARandomSign();
-        var spawnedSign = Instantiate(signToSpawn, this.transform.position, signToSpawn.transform.rotation * this.transform.rotation, this.transform);
+        var spawnedSign = Instantiate(signToSpawn, this.transform.position, this.transform.rotation * signToSpawn.transform.rotation, this.transform);
 
         Vector3 adjustedLocalScale = GetAdjustedLocalScale(signToSpawn.transform, scale);
 
@@ -33,6 +34,8 @@ public class Sign : MonoBehaviour
         // Apply the adjusted local scale to the sign
         spawnedSign.transform.localScale = adjustedLocalScale;
         //spawnedSign.transform.localScale = scale;
+
+        signSpawned = spawnedSign;
     }
     /*void OnDrawGizmos()
     {
@@ -54,7 +57,7 @@ public class Sign : MonoBehaviour
         // Calculate the adjusted local scale to retain the original world scale
         if (this.transform.rotation.eulerAngles.y % 180 == 0)
         {
-            Debug.Log($"{childTransform.transform.position} entered 0/180");
+           //Debug.Log($"{childTransform.transform.position} entered 0/180");
             adjustedLocalScale = new Vector3(
                 childTransform.localScale.x / scale.x,
                 childTransform.localScale.y / scale.y,
@@ -62,13 +65,30 @@ public class Sign : MonoBehaviour
             );
 
         }
-        else
+        else if(this.transform.rotation.eulerAngles.y % 90 == 0) //Case for 90 and 270 deg
         {
-            Debug.Log($"{childTransform.transform.position} entered 90/270");
+            //Debug.Log($"{childTransform.transform.position} entered 90/270");
             adjustedLocalScale = new Vector3(
                 childTransform.localScale.x / scale.z,
                 childTransform.localScale.y / scale.y,
                 childTransform.localScale.z / scale.x
+            );
+        }
+        /*else if(this.transform.rotation.eulerAngles.y == 135)
+        {
+            adjustedLocalScale = new Vector3(
+                childTransform.localScale.x / scale.z,
+                childTransform.localScale.y / scale.y,
+                childTransform.localScale.z / scale.x
+            );
+        }*/
+        else //I have some signs that are on 45 deg so this is also needed, order of execution matters :p
+        {
+            //Debug.Log($"{childTransform.transform.localPosition} entered 45");
+            adjustedLocalScale = new Vector3(
+                childTransform.localScale.x / (scale.x > scale.z? scale.x: scale.z),
+                childTransform.localScale.y / scale.y,
+                childTransform.localScale.z
             );
         }
 
