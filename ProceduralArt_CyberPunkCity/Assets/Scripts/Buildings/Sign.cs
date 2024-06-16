@@ -14,11 +14,16 @@ public class Sign : MonoBehaviour
 
     [SerializeField] List<sign> signList;
 
+    int justARandomNumberToSeeIfIShouldGenerateASign = 1;
+
     public void SpawnSign(Vector3 scale)
     {
+        if(!justARandomNumberToSeeIfIShouldGenerateASign.Equals(UnityEngine.Random.Range(0, 5))) 
+        {
+            return;
+        }
         GameObject signToSpawn = ReturnARandomSign();
-
-        var spawnedSign = Instantiate(signToSpawn, this.transform.position, this.transform.rotation, this.transform);
+        var spawnedSign = Instantiate(signToSpawn, this.transform.position, signToSpawn.transform.rotation * this.transform.rotation, this.transform);
 
         Vector3 adjustedLocalScale = GetAdjustedLocalScale(signToSpawn.transform, scale);
 
@@ -29,7 +34,7 @@ public class Sign : MonoBehaviour
         spawnedSign.transform.localScale = adjustedLocalScale;
         //spawnedSign.transform.localScale = scale;
     }
-    void OnDrawGizmos()
+    /*void OnDrawGizmos()
     {
         if (this.transform.rotation.eulerAngles.y % 180 == 0)
 
@@ -37,7 +42,9 @@ public class Sign : MonoBehaviour
         else
             Gizmos.color = Color.green;
         Gizmos.DrawSphere(this.transform.position, 1);
-    }
+    }*/ // used to debug the rotation of the sign
+    //This thing ate me so much time due to uneven scalings. I thought I would be done in 1h at most, it took me 3h and another person to figure out why the signs were
+    //scaling in so many weird ways. I am so done with this one.
     Vector3 GetAdjustedLocalScale(Transform childTransform, Vector3 scale)
     {
         // Get the local scale of the parent
